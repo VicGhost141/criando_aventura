@@ -8,76 +8,235 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <title>Velozes e Furiosos: A Caça ao Chip Roubado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Bai Jamjuree', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(30, 30, 46, 0.9);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid #e63946;
+        }
+
+        .passo {
+            display: none;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .passo.ativo {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            color: #e63946;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #f1faee;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #457b9d;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-proximo {
+            background: linear-gradient(to right, #e63946, #f4a261);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-proximo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to right, #f4a261, #e63946);
+        }
+
+        .btn-proximo:active {
+            transform: translateY(1px);
+        }
+
+        .final {
+            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .final h2 {
+            color: #f1faee;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .passo {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .btn-proximo {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <main>
         <div class="passo ativo" id="passo-0">
-            <img src="img/cenario-passo0.png" alt="Garagem com carros tunados">
-            <p>Durante um encontro na garagem do Toretto, Dom recebe uma mensagem codificada sobre um chip de alta tecnologia roubado que pode controlar qualquer sistema de segurança do mundo. Para encontrá-lo, precisamos seguir as pistas deixadas pelo hacker que o criou!</p>
-            <button class="btn-proximo" data-proximo="1">Tóquio</button>
-            <button class="btn-proximo" data-proximo="2">Miami</button>
+            <h1>Velozes e Furiosos: A Caça ao Chip Roubado</h1>
+            <img src="https://images.unsplash.com/photo-1626668893635-06ed59e08f0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Garagem com carros tunados">
+            <p>Na icônica garagem do Toretto, Dom recebe uma mensagem urgente de Mr. Nobody sobre o "Projeto Pandora", um chip de última geração roubado que pode desativar qualquer sistema de segurança global. Para recuperá-lo, a família precisa seguir as pistas deixadas pelo traidor da agência!</p>
+            <button class="btn-proximo" data-proximo="1">Investigar em Tóquio</button>
+            <button class="btn-proximo" data-proximo="2">Seguir para Miami</button>
         </div>
+        
         <div class="passo" id="passo-1">
-            <p>Você começa sua jornada em Tóquio, participando de uma corrida clandestina de drift para ganhar a confiança dos locais e obter a primeira pista.</p>
+            <p>Em Tóquio, você se junta a Han para uma corrida de drift clandestina no distrito de Shibuya. A vitória pode render informações valiosas sobre o paradeiro do chip.</p>
             <button class="btn-proximo" data-proximo="3">Participar da corrida de drift</button>
-            <button class="btn-proximo" data-proximo="4">Ignorar a corrida e voltar para LA</button>
+            <button class="btn-proximo" data-proximo="4">Ignorar a corrida e seguir para Berlim</button>
         </div>
+        
         <div class="passo" id="passo-2">
-            <p>Em Miami, você investiga o submundo das corridas de rua. A mensagem codificada indica que para localizar o chip você deve procurar a próxima pista em um dos pontos de encontro dos corredores. Por onde você começa?</p>
+            <p>Em Miami, você encontra Roman e Tej investigando o submundo das corridas de rua. A mensagem codificada indica que a próxima pista está escondida em um dos pontos de encontro dos corredores. Por onde você começa?</p>
             <button class="btn-proximo" data-proximo="5">Investigar o cais abandonado</button>
             <button class="btn-proximo" data-proximo="6">Explorar a zona industrial</button>
         </div>
+        
         <div class="passo" id="passo-3">
-            <p>Após vencer a corrida de drift em Tóquio, você ganha o respeito dos corredores locais que revelam que a próxima pista está em Dubai.</p>
+            <p>Após uma emocionante corrida de drift pelas ruas de Tóquio, Han revela que a próxima pista está com um contato em Dubai. O chip está sendo leiloado no mercado negro.</p>
             <button class="btn-proximo" data-proximo="7">Seguir para Dubai</button>
         </div>
 
         <div class="passo" id="passo-4">
-            <img src="img/cenario-passo4-voltar-casa.png" alt="imagem voltando para a garagem do Toretto">
-            <p>Você decide que o risco é grande demais e volta para a garagem do Toretto, mas sempre se pergunta o que teria encontrado.</p>
+            <img src="https://images.unsplash.com/photo-1551524164-6ca73534fcc2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Carro em estrada deserta">
+            <p>Você decide que Tóquio é uma pista falsa e segue para Berlim, onde Letty está investigando um laboratório de tecnologia suspeito.</p>
+            <button class="btn-proximo" data-proximo="13">Investigar o laboratório em Berlim</button>
         </div>
 
         <div class="passo" id="passo-5">
-            <p>No cais abandonado de Miami, você encontra um dispositivo escondido em um compartimento secreto de um carro abandonado, apontando que a próxima pista está em Dubai.</p>
+            <p>No cais abandonado de Miami, você e Roman encontram um dispositivo escondido em um compartimento secreto de um carro abandonado. Ele aponta que o chip está sendo transportado para Dubai.</p>
             <button class="btn-proximo" data-proximo="7">Viajar para Dubai</button>
         </div>
 
         <div class="passo" id="passo-6">
-            <p>Explorando a zona industrial, você encontra uma oficina clandestina, mas ela leva a um beco sem saída.</p>
+            <p>Explorando a zona industrial, você encontra uma oficina clandestina, mas ela leva a um beco sem saída. Parece que os inimigos tentaram despistá-los.</p>
             <button class="btn-proximo" data-proximo="8">Voltar e investigar o cais</button>
         </div>
 
         <div class="passo" id="passo-7">
-            <p>Em Dubai, a busca pelo chip se intensifica. Você se depara com dois arranha-céus onde o chip pode estar escondido.</p>
-            <button class="btn-proximo" data-proximo="9">Investigar o primeiro arranha-céu</button>
-            <button class="btn-proximo" data-proximo="10">Investigar o segundo arranha-céu</button>
+            <p>Em Dubai, a busca pelo chip se intensifica. Ramsey detectou o sinal do dispositivo vindo de um dos arranha-céus mais altos da cidade. Onde você investiga primeiro?</p>
+            <button class="btn-proximo" data-proximo="9">Investigar o Burj Khalifa</button>
+            <button class="btn-proximo" data-proximo="10">Investigar o Address Sky View</button>
         </div>
 
         <div class="passo" id="passo-8">
-            <p>De volta ao cais, você finalmente encontra o dispositivo escondido. Agora, para Dubai!</p>
+            <p>De volta ao cais, você finalmente encontra o dispositivo escondido que Tej consegue hackear. Agora, para Dubai!</p>
             <button class="btn-proximo" data-proximo="7">Seguir para Dubai</button>
         </div>
 
         <div class="passo" id="passo-9">
-            <p>No primeiro arranha-céu, você encontra um cofre com o chip roubado e documentos que revelam um plano para desestabilizar os mercados globais.</p>
+            <p>No Burj Khalifa, você encontra um cofre high-tech com o chip roubado e documentos que revelam um plano para desestabilizar os mercados globais. Cipher está por trás disso!</p>
             <button class="btn-proximo" data-proximo="11">Recuperar o chip</button>
         </div>
 
         <div class="passo" id="passo-10">
-            <p>O segundo arranha-céu contém apenas um escritório vazio. Apesar da vista impressionante, não há sinais do chip aqui.</p>
-            <button class="btn-proximo" data-proximo="12">Retornar e tentar o outro prédio</button>
+            <p>O Address Sky View contém apenas um escritório vazio. Apesar da vista impressionante, não há sinais do chip aqui. Parece que foi uma armadilha.</p>
+            <button class="btn-proximo" data-proximo="12">Retornar e tentar o Burj Khalifa</button>
         </div>
 
         <div class="passo" id="passo-11">
-            <img src="img/cenario-passo11-cidade-perdida.png" alt="encontrando o chip em um cofre high-tech">
-            <p>Com o chip recuperado, você evita uma catástrofe global e a família Toretto celebra mais uma missão cumprida, provando que a família é a força mais poderosa do mundo.</p>
+            <div class="final">
+                <h2>Missão Cumprida!</h2>
+                <img src="https://images.unsplash.com/photo-1626668893734-4e48ca57a7da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Família Toretto celebrando">
+                <p>Com o chip recuperado, você evita uma catástrofe global. De volta à garagem do Toretto, a família celebra mais uma missão cumprida, provando mais uma vez que a família é a força mais poderosa do mundo. Dom levanta seu cerveja e faz seu brinde característico: "Saúde à família!"</p>
+            </div>
         </div>
 
         <div class="passo" id="passo-12">
-            <p>Retornando e escolhendo o primeiro arranha-céu, você finalmente encontra o cofre com o chip roubado.</p>
+            <p>Retornando e escolhendo o Burj Khalifa, você finalmente encontra o cofre com o chip roubado. Cipher deixou uma mensagem ameaçadora, mas a família está um passo à frente.</p>
             <button class="btn-proximo" data-proximo="11">Recuperar o chip</button>
         </div>
+
+        <div class="passo" id="passo-13">
+            <p>Em Berlim, você e Letty invadem o laboratório de tecnologia e descobrem que o chip já foi transportado para Dubai para ser leiloado no mercado negro.</p>
+            <button class="btn-proximo" data-proximo="7">Seguir para Dubai</button>
+        </div>
     </main>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const botoes = document.querySelectorAll('.btn-proximo');
+            
+            botoes.forEach(botao => {
+                botao.addEventListener('click', function() {
+                    const proximoPasso = this.getAttribute('data-proximo');
+                    
+                    // Esconde todos os passos
+                    document.querySelectorAll('.passo').forEach(passo => {
+                        passo.classList.remove('ativo');
+                    });
+                    
+                    // Mostra o próximo passo
+                    document.getElementById(`passo-${proximoPasso}`).classList.add('ativo');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
