@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(101, 99, 71);
+    background-color: rgb(125, 162, 182);
     color: white;
     font-family: "Bai Jamjuree", sans-serif;
     display: flex;
@@ -10,7 +10,7 @@ body {
 }
 
 button {
-    background-color: #64A712;
+    background-color: rgb(125, 230, 182);
     color: white;
     font-family: "Bai Jamjuree", sans-serif;
 }
